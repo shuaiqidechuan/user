@@ -50,5 +50,18 @@ export default [
     name: 'zbk',
     path: '/New',
     component: './New',
+    icon: 'DislikeFilled',
+  },
+  {
+    name: 'inventory',
+    path: '/Inventory',
+    component: './Inventory',
+    icon: 'ShoppingFilled',
+  },
+  {
+    name: 'features',
+    path: '/Features',
+    component: './Features',
+    icon: 'SoundFilled',
   },
 ];
