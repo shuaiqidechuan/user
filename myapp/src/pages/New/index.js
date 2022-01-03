@@ -6,7 +6,7 @@ import styles from './index.less'
 
 const New = () => {
     return <div>
-        new page
+        new pagexxx
     </div>
 };
 
