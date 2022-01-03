@@ -2,7 +2,7 @@ export default {
   'menu.welcome': '欢迎',
   'menu.more-blocks': '更多区块',
   'menu.zbk': 'haodaerzbk',
-  'menu.inventory': '商品库存',
+  'menu.inventory': '商品管理',
   'menu.features': '当季特色',
   'menu.home': '首页',
   'menu.admin': '管理页',
