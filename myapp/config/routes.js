@@ -19,12 +19,6 @@ export default [
     ],
   },
   {
-    path: '/welcome',
-    name: 'welcome',
-    icon: 'smile',
-    component: './Welcome',
-  },
-  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',
@@ -43,19 +37,9 @@ export default [
     ],
   },
   {
-    path: '/',
-    redirect: '/welcome',
-  },
-  {
-    name: 'zbk',
-    path: '/New',
-    component: './New',
-    icon: 'DislikeFilled',
-  },
-  {
     name: 'inventory',
-    path: '/Inventory',
-    component: './Inventory',
+    path: '/inventory',
+    component: './inventory',
     icon: 'ShoppingFilled',
   },
   {
