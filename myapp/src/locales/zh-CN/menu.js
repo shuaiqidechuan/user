@@ -6,6 +6,7 @@ export default {
   'menu.features': '当季特色',
   'menu.home': '首页',
   'menu.admin': '管理页',
+  'menu.activity': '活动设置',
   'menu.admin.sub-page': '二级管理页',
   'menu.login': '登录',
   'menu.register': '注册',
