@@ -64,4 +64,6 @@ export default {
   'pages.searchTable.tenThousand': '万',
   'pages.searchTable.batchDeletion': '批量删除',
   'pages.searchTable.batchApproval': '批量审批',
+  'pages.activity.title': '活动名称',
+  'pages.activity.state': '活动状态',
 };
