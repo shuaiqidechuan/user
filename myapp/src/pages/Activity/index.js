@@ -94,7 +94,7 @@ export default () => {
     return (<ProForm formRef={formRef} initialValues={{
             table: defaultData,
         }}>
-      <EditableProTable rowKey="id" headerTitle="可编辑表格" maxLength={5} name="table" recordCreatorProps={position !== 'hidden'
+      <EditableProTable rowKey="id" maxLength={5} name="table" recordCreatorProps={position !== 'hidden'
             ? {
                 position: position,
                 record: () => ({ id: (Math.random() * 1000000).toFixed(0) }),
