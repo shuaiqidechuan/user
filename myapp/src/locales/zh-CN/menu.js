@@ -53,4 +53,10 @@ export default {
   'menu.editor.flow': '流程编辑器',
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
+  'menu.storestatistics': '店铺统计',
+  'menu.goodsmanagement': '商品管理',
+  'menu.ordermanagement': '订单管理',
+  'menu.brandpage': '品牌页面',
+  'menu.othersetting': '其他设置',
+  'menu.personal': '个人页',
 };

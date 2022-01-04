@@ -37,6 +37,36 @@ export default [
     ],
   },
   {
+    name: 'storestatistics',
+    path: '/Statistics',
+    component: './Statistics',
+  },
+  {
+    name: 'goodsmanagement',
+    path: '/Goodsmanagement',
+    component: './Goodsmanagement',
+  },
+  {
+    name: 'ordermanagement',
+    path: '/Ordermanagement',
+    component: './Ordermanagement',
+  },
+  {
+    name: 'brandpage',
+    path: '/Brandpage',
+    component: './Brandpage',
+  },
+  {
+    name: 'othersetting',
+    path: '/Othersetting',
+    component: './Othersetting',
+  },
+  {
+    name: 'personal',
+    path: '/Personal',
+    component: './Personal',
+  },
+  {
     name: 'activity',
     path: '/Activity',
     component: './Activity',
