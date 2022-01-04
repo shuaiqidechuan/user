@@ -48,4 +48,9 @@ export default [
     component: './Features',
     icon: 'SoundFilled',
   },
+  {
+    name: 'activity',
+    path: '/Activity',
+    component: './Activity',
+  },
 ];
