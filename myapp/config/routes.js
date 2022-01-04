@@ -37,18 +37,6 @@ export default [
     ],
   },
   {
-    name: 'inventory',
-    path: '/inventory',
-    component: './inventory',
-    icon: 'ShoppingFilled',
-  },
-  {
-    name: 'features',
-    path: '/Features',
-    component: './Features',
-    icon: 'SoundFilled',
-  },
-  {
     name: 'activity',
     path: '/Activity',
     component: './Activity',
