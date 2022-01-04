@@ -66,4 +66,5 @@ export default {
   'pages.searchTable.batchApproval': '批量审批',
   'pages.activity.title': '活动名称',
   'pages.activity.state': '活动状态',
+  'pages.activity.all': '全部',
 };
