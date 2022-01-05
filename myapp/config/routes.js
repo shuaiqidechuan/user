@@ -69,6 +69,7 @@ export default [
   {
     name: 'activity',
     path: '/Activity',
+    icon: 'TagsOutlined',
     component: './Activity',
   },
 ];
