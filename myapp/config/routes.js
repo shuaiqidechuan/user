@@ -64,6 +64,7 @@ export default [
   {
     name: 'personal',
     path: '/Personal',
+    icon: 'UserOutlined',
     component: './Personal',
   },
   {
