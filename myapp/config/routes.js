@@ -45,11 +45,13 @@ export default [
     name: 'goodsmanagement',
     path: '/Goodsmanagement',
     component: './Goodsmanagement',
+    icon: 'SearchOutlined'
   },
   {
     name: 'ordermanagement',
     path: '/Ordermanagement',
     component: './Ordermanagement',
+    icon: 'SendOutlined'
   },
   {
     name: 'brandpage',
