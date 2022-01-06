@@ -1,12 +1,9 @@
 import { useState } from 'react';
 import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
-import ProCard, { StatisticCard } from '@ant-design/pro-card';
+import ProCard from '@ant-design/pro-card';
 import ProForm, { ProFormMoney, ProFormUploadButton } from '@ant-design/pro-form';
-import { Button, Typography, Space, Radio, Input, InputNumber } from 'antd';
+import { Input, InputNumber } from 'antd';
 import styles from './index.less';
-
-const { Divider } = StatisticCard;
-const { Text } = Typography;
 
 const onChange = (e) => {
   console.log('Change:', e.target.value);

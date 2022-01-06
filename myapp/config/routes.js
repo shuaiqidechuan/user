@@ -19,9 +19,10 @@ export default [
     ],
   },
   {
-    name: 'storestatistics',
-    path: '/Statistics',
-    component: './Statistics',
+    name: 'home',
+    path: '/Home',
+    component: './Home',
+    icon: 'dashboard'
   },
   {
     name: 'goods-management',
@@ -49,9 +50,9 @@ export default [
   },
   {
     name: 'brandpage',
-    path: '/Brandpage',
+    path: '/Brand',
     icon: 'BarsOutlined',
-    component: './Brandpage',
+    component: './Brand',
   },
   {
     name: 'othersetting',
