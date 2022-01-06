@@ -63,16 +63,18 @@ export default [
     name: 'ordermanagement',
     path: '/Ordermanagement',
     component: './Ordermanagement',
-    icon: 'SendOutlined'
+    icon: 'TableOutlined'
   },
   {
     name: 'brandpage',
     path: '/Brandpage',
+    icon: 'BarsOutlined',
     component: './Brandpage',
   },
   {
     name: 'othersetting',
     path: '/Othersetting',
+    icon: 'CheckCircleOutlined',
     component: './Othersetting',
   },
   {

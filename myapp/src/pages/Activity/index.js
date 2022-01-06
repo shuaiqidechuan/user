@@ -1,12 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { EditableProTable } from '@ant-design/pro-table';
-import ProForm, { ProFormRadio, ProFormField, ProFormDependency } from '@ant-design/pro-form';
+import { ProFormRadio, ProFormField } from '@ant-design/pro-form';
 import ProCard from '@ant-design/pro-card';
 import { useIntl } from 'umi';
 
+const waitTime = (time = 100) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(true);
+        }, time);
+    });
+};
 const defaultData = [
     {
-        id: '624748504',
+        id: 624748504,
         title: '活动名称一',
         decs: '这个活动真好玩',
         state: 'open',
@@ -15,6 +22,7 @@ const defaultData = [
     },
 ];
 export default () => {
+
     const intl = useIntl()
     const del = intl.formatMessage({
         id: 'pages.activity.delete',
@@ -25,9 +33,9 @@ export default () => {
         defaultMessage: 'pages.activity.edit',
     })
 
-    const [editableKeys, setEditableRowKeys] = useState(() => []);
+    const [editableKeys, setEditableRowKeys] = useState([]);
+    const [dataSource, setDataSource] = useState([]);
     const [position, setPosition] = useState('bottom');
-    const formRef = useRef();
     const columns = [
         {
             title: intl.formatMessage({
@@ -35,15 +43,16 @@ export default () => {
                 defaultMessage: 'pages.activity.title',
             }),
             dataIndex: 'title',
-            formItemProps: () => {
+            formItemProps: (form, { rowIndex }) => {
                 return {
-                    rules: [{
-                        required: true, message: intl.formatMessage({
-                            id: 'pages.activity.title',
-                            defaultMessage: 'pages.activity.title',
-                        }),
-                    }],
+                    rules: rowIndex > 2 ? [{  required: true, message: intl.formatMessage({
+                        id: 'pages.activity.title',
+                        defaultMessage: 'pages.activity.title',
+                    }), }] : [],
                 };
+            },
+            editable: (text, record, index) => {
+                return index !== 0;
             },
             width: '30%',
         },
@@ -56,13 +65,10 @@ export default () => {
             dataIndex: 'state',
             valueType: 'select',
             valueEnum: {
-                all: {
-                    title: intl.formatMessage({
-                        id: 'pages.activity.all',
-                        defaultMessage: 'pages.activity.all',
-                    }),
-                    status: 'Default'
-                },
+                title: intl.formatMessage({
+                    id: 'pages.activity.all',
+                    defaultMessage: 'pages.activity.all',
+                }),
                 open: {
                     text: intl.formatMessage({
                         id: 'pages.activity.ended',
@@ -103,33 +109,27 @@ export default () => {
             width: 200,
             render: (text, record, _, action) => [
                 <a key="editable" onClick={() => {
-                    var _a;
-                    (_a = action === null || action === void 0 ? void 0 : action.startEditable) === null || _a === void 0 ? void 0 : _a.call(action, record.id);
-                }}>
-                    {edit}
-                </a>,
+                        var _a;
+                        (_a = action === null || action === void 0 ? void 0 : action.startEditable) === null || _a === void 0 ? void 0 : _a.call(action, record.id);
+                    }}>
+          {edit}
+        </a>,
                 <a key="delete" onClick={() => {
-                    var _a, _b;
-                    const tableDataSource = (_a = formRef.current) === null || _a === void 0 ? void 0 : _a.getFieldValue('table');
-                    (_b = formRef.current) === null || _b === void 0 ? void 0 : _b.setFieldsValue({
-                        table: tableDataSource.filter((item) => item.id !== record.id),
-                    });
-                }}>
-                    {del}
-                </a>,
+                        setDataSource(dataSource.filter((item) => item.id !== record.id));
+                    }}>
+          {del}
+        </a>,
             ],
         },
     ];
-    return (<ProForm formRef={formRef} initialValues={{
-        table: defaultData,
-    }}>
-        <EditableProTable rowKey="id" maxLength={5} name="table" recordCreatorProps={position !== 'hidden'
+    return (<>
+      <EditableProTable rowKey="id" headerTitle="可编辑表格" maxLength={5} recordCreatorProps={position !== 'hidden'
             ? {
                 position: position,
                 record: () => ({ id: (Math.random() * 1000000).toFixed(0) }),
             }
             : false} toolBarRender={() => [
-                <ProFormRadio.Group key="render" fieldProps={{
+            <ProFormRadio.Group key="render" fieldProps={{
                     value: position,
                     onChange: (e) => setPosition(e.target.value),
                 }} options={[
@@ -154,11 +154,26 @@ export default () => {
                         }),
                         value: 'hidden',
                     },
-                ]} />,
-            ]} columns={columns} editable={{
-                type: 'multiple',
-                editableKeys,
-                onChange: setEditableRowKeys,
-            }} />
-    </ProForm>);
+                ]}/>,
+        ]} columns={columns} request={async () => ({
+            data: defaultData,
+            total: 3,
+            success: true,
+        })} value={dataSource} onChange={setDataSource} editable={{
+            type: 'multiple',
+            editableKeys,
+            onSave: async (rowKey, data, row) => {
+                console.log(rowKey, data, row);
+                await waitTime(2000);
+            },
+            onChange: setEditableRowKeys,
+        }}/>
+      <ProCard title="表格数据" headerBordered collapsible defaultCollapsed>
+        <ProFormField ignoreFormItem fieldProps={{
+            style: {
+                width: '100%',
+            },
+        }} mode="read" valueType="jsonCode" text={JSON.stringify(dataSource)}/>
+      </ProCard>
+    </>);
 };
