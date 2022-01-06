@@ -1,7 +1,6 @@
 export default {
   'menu.welcome': '欢迎',
   'menu.more-blocks': '更多区块',
-  'menu.features': '当季特色',
   'menu.home': '首页',
   'menu.admin': '管理页',
   'menu.activity': '活动设置',

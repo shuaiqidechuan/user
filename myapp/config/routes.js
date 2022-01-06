@@ -19,43 +19,25 @@ export default [
     ],
   },
   {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
-    component: './Admin',
-    routes: [
-      {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        icon: 'smile',
-        component: './Welcome',
-      },
-      {
-        component: './404',
-      },
-    ],
-  },
-  {
     name: 'storestatistics',
     path: '/Statistics',
     component: './Statistics',
   },
   {
     name: 'goods-management',
-    // path: '/Goodsmanagement',
+    path: '/GoodsManagement',
     // component: './Goodsmanagement',
     icon: 'SearchOutlined',
     routes: [
       {
         name: 'goods-check',
-        path: '/Goodsmanagement/checkGoods',
-        component: './Goodsmanagement/checkGoods',
+        path: '/GoodsManagement/checkGoods',
+        component: './GoodsManagement/checkGoods',
       },
       {
         name: 'goods-add',
-        path: '/Goodsmanagement/addGoods',
-        component: './Goodsmanagement/addGoods',
+        path: '/GoodsManagement/addGoods',
+        component: './GoodsManagement/addGoods',
       },
     ],
   },
