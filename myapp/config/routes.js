@@ -42,10 +42,22 @@ export default [
     component: './Statistics',
   },
   {
-    name: 'goodsmanagement',
-    path: '/Goodsmanagement',
-    component: './Goodsmanagement',
-    icon: 'SearchOutlined'
+    name: 'goods-management',
+    // path: '/Goodsmanagement',
+    // component: './Goodsmanagement',
+    icon: 'SearchOutlined',
+    routes: [
+      {
+        name: 'goods-check',
+        path: '/Goodsmanagement/checkGoods',
+        component: './Goodsmanagement/checkGoods',
+      },
+      {
+        name: 'goods-add',
+        path: '/Goodsmanagement/addGoods',
+        component: './Goodsmanagement/addGoods',
+      },
+    ],
   },
   {
     name: 'ordermanagement',
