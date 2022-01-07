@@ -43,19 +43,16 @@ export default () => {
                 defaultMessage: 'pages.activity.title',
             }),
             dataIndex: 'title',
-            formItemProps: (form, { rowIndex }) => {
+            formItemProps: () => {
                 return {
-                    rules: rowIndex > 2 ? [{  required: true, message: intl.formatMessage({
-                        id: 'pages.activity.title',
-                        defaultMessage: 'pages.activity.title',
-                    }), }] : [],
+                  rules: [{ required: true,  message: intl.formatMessage({
+                    id: 'pages.activity.title',
+                    defaultMessage: 'pages.activity.title',
+                }), }],
                 };
+              },
+              width: '30%',
             },
-            editable: (text, record, index) => {
-                return index !== 0;
-            },
-            width: '30%',
-        },
         {
             title: intl.formatMessage({
                 id: 'pages.activity.state',
@@ -68,6 +65,7 @@ export default () => {
                 title: intl.formatMessage({
                     id: 'pages.activity.all',
                     defaultMessage: 'pages.activity.all',
+                    state: 'Default',
                 }),
                 open: {
                     text: intl.formatMessage({
