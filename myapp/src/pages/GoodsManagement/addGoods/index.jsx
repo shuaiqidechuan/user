@@ -10,7 +10,7 @@ const onChange = (e) => {
 };
 
 const addGoods = () => {
-  const [value, setValue] = React.useState('9999999');
+  const [value, setValue] = React.useState('99');
 
   return (
     <>
