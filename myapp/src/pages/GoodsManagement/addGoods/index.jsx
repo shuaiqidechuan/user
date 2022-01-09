@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
 import ProCard from '@ant-design/pro-card';
 import ProForm, { ProFormMoney, ProFormUploadButton } from '@ant-design/pro-form';
-import { Input, InputNumber } from 'antd';
+import { Input, InputNumber, Button } from 'antd';
 import styles from './index.less';
 
 const onChange = (e) => {
@@ -10,6 +10,8 @@ const onChange = (e) => {
 };
 
 const addGoods = () => {
+  const [value, setValue] = React.useState('9999999');
+
   return (
     <>
       <PageContainer
@@ -42,7 +44,6 @@ const addGoods = () => {
               <Input showCount maxLength={30} onChange={onChange} />
             </ProCard>
           </ProCard>
-
           <ProCard className={styles.option} gutter={[16, 16]}>
             <ProCard className={styles.title} colSpan="10%">
               商品轮播图
@@ -84,7 +85,7 @@ const addGoods = () => {
               商品规格
             </ProCard>
             <ProCard className={styles.content} colSpan="20%">
-              <Input placeholder="一斤、500克、1件" showCount maxLength={10} onChange={onChange} />
+              <InputNumber min={1} max={1000000} value={value} onChange={setValue} />
             </ProCard>
           </ProCard>
 
